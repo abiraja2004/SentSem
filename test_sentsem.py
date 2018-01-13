@@ -55,3 +55,12 @@ class TestSentsem(TestCase):
 
         pass_case = sentsem(sent1, sent2) > 0.4
         self.assertTrue(pass_case)
+
+    def test_not_in_vocab(self):
+        from sentsem import sentsem
+
+        sent1 = 'I need the email of tuition department'
+        sent2 = 'I want to email the tuition department'
+
+        pass_case = sentsem(sent1, sent2) > 0.5
+        self.assertTrue(pass_case)
